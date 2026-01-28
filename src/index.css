@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;500;700&display=swap');
+
+:root {
+  font-family: 'Outfit', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #ffffff;
+  background-color: #0a0a0a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Color Palette - yes_iam_erica Premium */
+  --color-primary: #E0218A; /* Hot Pink */
+  --color-primary-dark: #B01065;
+  --color-secondary: #0a0a0a; /* Midnight Black */
+  --color-accent-gold: #FFD700; /* Gold */
+  
+  --color-bg-dark: #0a0a0a;
+  --color-bg-card: #141414;
+  --color-bg-glass: rgba(20, 20, 20, 0.7);
+  
+  --color-text-bright: #ffffff;
+  --color-text-muted: #a0a0a0;
+  --color-border: rgba(224, 33, 138, 0.2); /* Faint pink border */
+
+  /* Typography */
+  --font-heading: 'Dancing Script', cursive;
+  --font-body: 'Quicksand', sans-serif;
+
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease-in-out;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--color-bg-dark);
+  font-family: var(--font-body);
+  color: var(--color-text-bright);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .heading-font {
+  font-family: var(--font-heading);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  filter: brightness(1.2);
+}
