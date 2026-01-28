@@ -1,0 +1,84 @@
+/* About Section Styles */
+.about-section {
+  padding: 8rem 5%;
+  background: linear-gradient(to bottom, #0a0a0a, #141414);
+  overflow: hidden;
+}
+
+.about-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-container {
+  padding: 0.5rem;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.about-section .section-title {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.about-section p {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  line-height: 1.8;
+  max-width: none;
+  margin: 0;
+}
+
+.stats-container {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  color: var(--color-accent-gold);
+  font-weight: bold;
+}
+
+.stat-label {
+  color: var(--color-text-muted) !important;
+  font-size: 0.9rem !important;
+  margin-top: 0 !important;
+  font-family: sans-serif !important; /* Resetting font for small labels if needed, or keep heading font */
+  text-shadow: none !important;
+}
+
+@media (max-width: 968px) {
+  .about-content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .about-section h2 {
+    text-align: center !important;
+  }
+
+  .stats-container {
+      justify-content: center;
+  }
+}

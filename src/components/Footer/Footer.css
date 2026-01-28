@@ -1,0 +1,52 @@
+/* Footer Styles */
+.footer {
+  padding: 6rem 5% 4rem;
+  text-align: center;
+  background-color: #050505;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-nav {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-nav a:hover {
+  color: var(--color-primary);
+}
+
+.social-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.social-btn {
+  padding: 0.8rem;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyright {
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  color: '#444'; /* Note: This was inline style in JSX, ensuring it works as CSS */
+  color: #444; 
+  max-width: 600px;
+  margin: 3rem auto 0;
+}

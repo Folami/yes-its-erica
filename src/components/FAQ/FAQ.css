@@ -1,0 +1,35 @@
+/* FAQ Section Styles */
+.faq-section {
+  padding: 5rem 5%;
+  background-color: #0a0a0a;
+}
+
+.faq-grid {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  border-left: 4px solid var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.faq-item h4 {
+  margin-bottom: 0.5rem;
+  color: var(--color-accent-gold);
+}
+
+.faq-item p {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+  max-width: 800px;
+  margin: 1.5rem auto;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
