@@ -9,8 +9,60 @@ import ericaJoi from './assets/erica-joi.jpg'
 import ericaTheFace from './assets/erica-the-face.jpg'
 import './App.css'
 
+function LoginModal({ isOpen, onClose, onGoogleSuccess, onFacebookResponse }) {
+  if (!isOpen) return null
+
+  return (
+    <div className="login-modal-overlay" onClick={onClose}>
+      <div className="login-modal-content glass-panel" onClick={e => e.stopPropagation()}>
+        <button className="modal-close" onClick={onClose}>&times;</button>
+        <h2>Join My Inner Circle</h2>
+        <p>Login to access exclusive content</p>
+        
+        <div className="modal-login-buttons">
+          <div className="google-login-wrapper">
+            <GoogleLogin
+              onSuccess={(response) => {
+                onGoogleSuccess(response)
+                onClose()
+              }}
+              onError={() => console.log('Google login failed')}
+              theme="filled_black"
+              shape="pill"
+              text="continue_with"
+            />
+          </div>
+          
+          <div className="separator"><span>OR</span></div>
+          
+          <FacebookLogin
+            appId="YOUR_FACEBOOK_APP_ID"
+            onSuccess={(response) => {
+              onFacebookResponse(response)
+              onClose()
+            }}
+            onFailure={() => console.log('Facebook login failed')}
+            render={(renderProps) => (
+              <button
+                className="facebook-btn"
+                onClick={renderProps.onClick}
+              >
+                Continue with Facebook
+              </button>
+            )}
+          />
+        </div>
+        <p className="modal-footer">
+          By joining, you verify you are 18+ and agree to our Terms.
+        </p>
+      </div>
+    </div>
+  )
+}
+
 function App() {
   const [user, setUser] = useState(null)
+  const [showLoginModal, setShowLoginModal] = useState(false)
 
   const handleGoogleSuccess = (credentialResponse) => {
     console.log('Google login successs:', credentialResponse)
@@ -29,7 +81,7 @@ function App() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1500, // Slower transition as requested
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -47,24 +99,22 @@ function App() {
   return (
     <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
       <div className="app-container">
+        <LoginModal 
+          isOpen={showLoginModal} 
+          onClose={() => setShowLoginModal(false)}
+          onGoogleSuccess={handleGoogleSuccess}
+          onFacebookResponse={handleFacebookResponse}
+        />
+        
         <nav className="navbar">
           <div className="logo-text">Yes, I am Erica</div>
-          <GoogleLogin
-            onSuccess={handleGoogleSuccess}
-            onError={() => {
-              console.log('Google login failed')
-            }}
-            render={(renderProps) => (
-              <button
-                className="cta-btn"
-                style={{ padding: '0.5rem 1.5rem', fontSize: '0.9rem' }}
-                onClick={renderProps.onClick}
-                disabled={renderProps.disabled}
-              >
-                Login
-              </button>
-            )}
-          />
+          <button
+            className="cta-btn"
+            style={{ padding: '0.5rem 1.5rem', fontSize: '0.9rem' }}
+            onClick={() => setShowLoginModal(true)}
+          >
+            Login
+          </button>
         </nav>
 
         <main>
@@ -87,36 +137,15 @@ function App() {
                       find anywhere else.
                     </p>
                     <div className="hero-buttons">
-                      <GoogleLogin
-                        onSuccess={handleGoogleSuccess}
-                        onError={() => {
-                          console.log('Google login failed')
-                        }}
-                        render={(renderProps) => (
-                          <button
-                            className="cta-btn"
-                            onClick={renderProps.onClick}
-                            disabled={renderProps.disabled}
-                          >
-                            Enter Now
-                          </button>
-                        )}
-                      />
-                      <FacebookLogin
-                        appId="YOUR_FACEBOOK_APP_ID"
-                        onSuccess={handleFacebookResponse}
-                        onFailure={() => {
-                          console.log('Facebook login failed')
-                        }}
-                        render={(renderProps) => (
-                          <button
-                            className="cta-btn secondary"
-                            onClick={renderProps.onClick}
-                          >
-                            Free Preview
-                          </button>
-                        )}
-                      />
+                      <button
+                        className="cta-btn"
+                        onClick={() => setShowLoginModal(true)}
+                      >
+                        Erica's Secret Experience
+                      </button>
+                      <button className="cta-btn secondary">
+                        Free Preview
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -188,7 +217,7 @@ function App() {
                   padding: '0.5rem',
                   borderRadius: '20px',
                   overflow: 'hidden',
-                  aspectRation: '1/1',
+                  aspectRatio: '1/1',
                 }}
               >
                 <img
