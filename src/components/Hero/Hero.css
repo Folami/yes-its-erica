@@ -97,6 +97,7 @@
 }
 
 .hero-content h1 {
+  font-family: var(--font-body); /* Changed from inheritance/heading to body font for contrast */
   font-size: 2rem;
   margin: 0 0 2rem;
   color: var(--color-accent-gold);
@@ -104,6 +105,8 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   opacity: 0;
   animation: fadeIn 1s ease-out 0.4s forwards;
+  letter-spacing: 1px;
+  text-transform: uppercase; /* Added for a more "sub-header" feel if using body font */
 }
 
 .hero-content p {
