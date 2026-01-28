@@ -78,11 +78,19 @@ function Hero({ onLoginClick }) {
         <div className="hero-slide">
           <div className="hero-image-container">
              {/* Missing erica-val-mobile.jpg, using unsplash for both for now to prevent crash */}
-            <img
+            {/* <img
               src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?q=80&w=2000&auto=format&fit=crop"
               alt="Valentine's Exclusive"
               className="hero-image"
-            />
+            /> */}
+            <picture>
+                <source media="(max-width: 768px)" srcSet={ericaValMobile} />
+                <img
+                  src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?q=80&w=2000&auto=format&fit=crop"
+                  alt="Valentine's Exclusive"
+                  className="hero-image"
+                />
+            </picture>
             <div className="hero-overlay"></div>
             <div className="hero-content">
               <span className="hero-subtitle">Valentine's Exclusive</span>
