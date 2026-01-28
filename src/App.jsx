@@ -182,7 +182,7 @@ function App() {
                     <span className="hero-subtitle">
                       Instructional Video Call
                     </span>
-                    <h1>Book a live 1-on-1 session</h1>
+                    <h1>Book a live 1-on-1 JOI session</h1>
                     <p>Interactive, intense, and unforgettable.</p>
                     <div className="hero-buttons">
                       <button className="cta-btn">Book Session Now</button>
