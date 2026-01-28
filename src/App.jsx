@@ -3,18 +3,14 @@ import { useState } from 'react'
 import './App.css'
 
 // Components
-import Navbar from './components/Navbar/Navbar'
-import Hero from './components/Hero/Hero'
-import About from './components/About/About'
-import Gallery from './components/Gallery/Gallery'
-import Pricing from './components/Pricing/Pricing'
-import FAQ from './components/FAQ/FAQ'
-import Footer from './components/Footer/Footer'
+import Home from './components/Home/Home'
 import LoginModal from './components/LoginModal/LoginModal'
+import FreePreview from './components/FreePreview/FreePreview'
 
 function App() {
   const [user, setUser] = useState(null)
   const [showLoginModal, setShowLoginModal] = useState(false)
+  const [currentView, setCurrentView] = useState('home') // 'home' or 'free-preview'
 
   const handleGoogleSuccess = (credentialResponse) => {
     console.log('Google login successs:', credentialResponse)
@@ -24,6 +20,20 @@ function App() {
   const handleFacebookResponse = (response) => {
     console.log('Facebook login success:', response)
     setUser(response)
+  }
+
+  const renderContent = () => {
+    switch (currentView) {
+      case 'free-preview':
+        return <FreePreview onBack={() => setCurrentView('home')} />
+      default:
+        return (
+          <Home 
+            onLoginClick={() => setShowLoginModal(true)} 
+            onFreePreviewClick={() => setCurrentView('free-preview')}
+          />
+        )
+    }
   }
 
   return (
@@ -36,17 +46,8 @@ function App() {
           onFacebookResponse={handleFacebookResponse}
         />
         
-        <Navbar onLoginClick={() => setShowLoginModal(true)} />
+        {renderContent()}
 
-        <main>
-          <Hero onLoginClick={() => setShowLoginModal(true)} />
-          <About />
-          <Gallery />
-          <Pricing />
-          <FAQ />
-        </main>
-
-        <Footer />
       </div>
     </GoogleOAuthProvider>
   )

@@ -97,7 +97,7 @@
 }
 
 .hero-content h1 {
-  font-family: var(--font-body); /* Changed from inheritance/heading to body font for contrast */
+  font-family: var(--font-premium); /* Premium Serif Font */
   font-size: 2rem;
   margin: 0 0 2rem;
   color: var(--color-accent-gold);

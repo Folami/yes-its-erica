@@ -6,26 +6,14 @@ import ericaMain from '../../assets/erica-main.jpg'
 import ericaJoi from '../../assets/erica-joi.jpg'
 import ericaGardenMobile from '../../assets/erica-garden-mobile.jpg'
 import ericaJoiMobile from '../../assets/erica-joi-mobile.jpg'
-// Note: erica-val-mobile.jpg file existence not confirmed in listing, using placeholder or check if user meant another file. 
-// Assuming naming convention 'erica-val-mobile.jpg' for now, or fallback to desktop image if import fails (though import failure breaks build).
-// Given the user prompt, I will try to import it. If it fails, I'll need to fix it.
-// Wait, I saw erica-garden-mobile.jpg and erica-joi-mobile.jpg within the dir list output?
-// Let me double check the dir output I just got.
-// . .. assets.js erica-garden-mobile.jpg erica-joi-mobile.jpg erica-joi.jpg erica-main.jpg erica-site-preview.jpg erica-the-face.jpg react.svg
-// erica-val-mobile.jpg is NOT in the list. erica-val-mobile.jpgg was the user typo.
-// I will import the ones I have. For the missing one, I will use the desktop one for mobile too for now to avoid build error, or a placeholder if I had one.
-// Actually, looking at slide 2, it uses a unsplash URL! "https://images.unsplash.com/photo-1518568814500-bf0f8d125f46..."
-// User asked: "In slide 2 ... use "erica-val-mobile.jpgg" ... as the "hero-image"."
-// Since the file is missing, I cannot import it. I will keep the unsplash image for desktop and maybe use it for mobile too, or add a comment.
-// However, to fulfill the request as much as possible, I will add the import for the ones that exist.
-// AND I will add a TODO or comment for the missing val mobile image.
+import ericaValMobile from '../../assets/erica-val-mobile.jpg'
 import './Hero.css'
 
-function Hero({ onLoginClick }) {
+function Hero({ onLoginClick, onFreePreviewClick }) {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1500,
+    speed: 1550,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -68,7 +56,10 @@ function Hero({ onLoginClick }) {
                 >
                   Erica's Secret Experience
                 </button>
-                <button className="cta-btn secondary">
+                <button 
+                  className="cta-btn secondary"
+                  onClick={onFreePreviewClick}
+                >
                   Free Preview
                 </button>
               </div>
