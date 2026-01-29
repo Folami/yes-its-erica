@@ -1,0 +1,43 @@
+.merch-page {
+  padding: 8rem 5% 4rem;
+  min-height: 100vh;
+  background-color: var(--color-bg-dark);
+}
+
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.merch-card {
+  padding: 1rem;
+  text-align: center;
+}
+
+.merch-image-placeholder {
+  height: 250px;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  color: #666;
+}
+
+.merch-info h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.merch-info p {
+  color: var(--color-accent-gold);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}

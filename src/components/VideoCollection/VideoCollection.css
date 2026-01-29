@@ -1,0 +1,61 @@
+.video-collection-page {
+  padding: 8rem 5% 4rem;
+  min-height: 100vh;
+  background-color: var(--color-bg-dark);
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-card {
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+}
+
+.video-thumbnail {
+  height: 200px;
+  background: #222;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.play-btn {
+  font-size: 3rem;
+  color: white;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.video-thumbnail:hover .play-btn {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.video-info {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.video-info h3 {
+  font-family: var(--font-premium);
+  font-size: 1.5rem; /* Reduced from H1, appropriate for card titles */
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.video-info p {
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}

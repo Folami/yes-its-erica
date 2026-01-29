@@ -98,15 +98,21 @@
 
 .hero-content h1 {
   font-family: var(--font-premium); /* Premium Serif Font */
-  font-size: 2rem;
+  font-size: 3.5rem; /* Reduced from potential massive sizes, tuned for elegance */
   margin: 0 0 2rem;
   color: var(--color-accent-gold);
   line-height: 1.1;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   opacity: 0;
   animation: fadeIn 1s ease-out 0.4s forwards;
-  letter-spacing: 1px;
-  text-transform: uppercase; /* Added for a more "sub-header" feel if using body font */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 400; /* Lighter weight for elegance */
+  font-style: italic; /* Editorial flair */
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 2rem; }
 }
 
 .hero-content p {

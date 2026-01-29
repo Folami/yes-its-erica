@@ -9,7 +9,7 @@ import ericaJoiMobile from '../../assets/erica-joi-mobile.jpg'
 import ericaValMobile from '../../assets/erica-val-mobile.jpg'
 import './Hero.css'
 
-function Hero({ onLoginClick, onFreePreviewClick }) {
+function Hero({ onLoginClick, onFreePreviewClick, onBookSessionClick }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -113,7 +113,12 @@ function Hero({ onLoginClick, onFreePreviewClick }) {
               <h1>Book a live 1-on-1 session</h1>
               <p>Interactive, intense, and unforgettable.</p>
               <div className="hero-buttons">
-                <button className="cta-btn">Book Session Now</button>
+                <button 
+                  className="cta-btn"
+                  onClick={onBookSessionClick}
+                >
+                  Book Session Now
+                </button>
               </div>
             </div>
           </div>

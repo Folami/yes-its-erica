@@ -7,14 +7,15 @@ import Pricing from '../Pricing/Pricing'
 import FAQ from '../FAQ/FAQ'
 import Footer from '../Footer/Footer'
 
-function Home({ onLoginClick, onFreePreviewClick }) {
+function Home({ onLoginClick, onFreePreviewClick, onBookSessionClick, onNavigate }) {
   return (
     <>
-      <Navbar onLoginClick={onLoginClick} />
+      <Navbar onLoginClick={onLoginClick} onNavigate={onNavigate} />
       <main>
         <Hero 
             onLoginClick={onLoginClick} 
             onFreePreviewClick={onFreePreviewClick} 
+            onBookSessionClick={onBookSessionClick}
         />
         <About />
         <Gallery />

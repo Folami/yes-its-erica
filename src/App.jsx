@@ -6,11 +6,16 @@ import './App.css'
 import Home from './components/Home/Home'
 import LoginModal from './components/LoginModal/LoginModal'
 import FreePreview from './components/FreePreview/FreePreview'
+import PhotoGallery from './components/PhotoGallery/PhotoGallery'
+import VideoCollection from './components/VideoCollection/VideoCollection'
+import Merchandise from './components/Merchandise/Merchandise'
+import BookingModal from './components/BookingModal/BookingModal'
 
 function App() {
   const [user, setUser] = useState(null)
   const [showLoginModal, setShowLoginModal] = useState(false)
-  const [currentView, setCurrentView] = useState('home') // 'home' or 'free-preview'
+  const [showBookingModal, setShowBookingModal] = useState(false)
+  const [currentView, setCurrentView] = useState('home') // 'home', 'free-preview', 'photo-gallery', etc.
 
   const handleGoogleSuccess = (credentialResponse) => {
     console.log('Google login successs:', credentialResponse)
@@ -22,15 +27,28 @@ function App() {
     setUser(response)
   }
 
+  const navigateTo = (view) => {
+      window.scrollTo(0,0)
+      setCurrentView(view)
+  }
+
   const renderContent = () => {
     switch (currentView) {
       case 'free-preview':
-        return <FreePreview onBack={() => setCurrentView('home')} />
+        return <FreePreview onBack={() => navigateTo('home')} />
+      case 'photo-gallery':
+        return <PhotoGallery onNavigate={navigateTo} />
+      case 'video-collection':
+        return <VideoCollection onNavigate={navigateTo} />
+      case 'merchandise':
+        return <Merchandise onNavigate={navigateTo} />
       default:
         return (
           <Home 
             onLoginClick={() => setShowLoginModal(true)} 
-            onFreePreviewClick={() => setCurrentView('free-preview')}
+            onFreePreviewClick={() => navigateTo('free-preview')}
+            onBookSessionClick={() => setShowBookingModal(true)}
+            onNavigate={navigateTo}
           />
         )
     }
@@ -44,6 +62,11 @@ function App() {
           onClose={() => setShowLoginModal(false)}
           onGoogleSuccess={handleGoogleSuccess}
           onFacebookResponse={handleFacebookResponse}
+        />
+
+        <BookingModal
+            isOpen={showBookingModal}
+            onClose={() => setShowBookingModal(false)}
         />
         
         {renderContent()}
