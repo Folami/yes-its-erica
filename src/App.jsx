@@ -35,7 +35,7 @@ function App() {
   const renderContent = () => {
     switch (currentView) {
       case 'free-preview':
-        return <FreePreview onBack={() => navigateTo('home')} />
+        return <FreePreview onNavigate={navigateTo} />
       case 'photo-gallery':
         return <PhotoGallery onNavigate={navigateTo} />
       case 'video-collection':

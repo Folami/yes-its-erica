@@ -98,7 +98,7 @@
 
 .hero-content h1 {
   font-family: var(--font-premium); /* Premium Serif Font */
-  font-size: 3.5rem; /* Reduced from potential massive sizes, tuned for elegance */
+  font-size: 2.5rem; /* Reduced from potential massive sizes, tuned for elegance */
   margin: 0 0 2rem;
   color: var(--color-accent-gold);
   line-height: 1.1;
@@ -206,5 +206,5 @@
 }
 
 @media (max-width: 768px) {
-  .hero-content h1 { font-size: 2.5rem; }
+  .hero-content h1 { font-size: 2.0rem; }
 }
