@@ -16,6 +16,8 @@ function Home({ onLoginClick, onFreePreviewClick, onBookSessionClick, onNavigate
             onLoginClick={onLoginClick} 
             onFreePreviewClick={onFreePreviewClick} 
             onBookSessionClick={onBookSessionClick}
+            onGalleryClick={() => onNavigate('photo-gallery')}
+            onVideoCollectionClick={() => onNavigate('video-collection')}
         />
         <About />
         <Gallery />

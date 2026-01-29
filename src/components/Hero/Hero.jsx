@@ -9,7 +9,7 @@ import ericaJoiMobile from '../../assets/erica-joi-mobile.jpg'
 import ericaValMobile from '../../assets/erica-val-mobile.jpg'
 import './Hero.css'
 
-function Hero({ onLoginClick, onFreePreviewClick, onBookSessionClick }) {
+function Hero({ onLoginClick, onFreePreviewClick, onBookSessionClick, onVideoCollectionClick, onGalleryClick }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -58,7 +58,7 @@ function Hero({ onLoginClick, onFreePreviewClick, onBookSessionClick }) {
                 </button>
                 <button 
                   className="cta-btn secondary"
-                  onClick={onFreePreviewClick}
+                  onClick={onGalleryClick}
                 >
                   Free Preview
                 </button>
@@ -88,7 +88,10 @@ function Hero({ onLoginClick, onFreePreviewClick, onBookSessionClick }) {
               <h1>Get my limited-time customized video package</h1>
               <p>A personal gift that keeps on giving.</p>
               <div className="hero-buttons">
-                <button className="cta-btn">
+                <button 
+                  className="cta-btn"
+                  onClick={onVideoCollectionClick}
+                >
                   Get Your Private Video
                 </button>
               </div>
