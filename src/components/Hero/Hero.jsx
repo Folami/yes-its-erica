@@ -58,7 +58,7 @@ function Hero({ onLoginClick, onFreePreviewClick, onBookSessionClick, onVideoCol
                 </button>
                 <button 
                   className="cta-btn secondary"
-                  onClick={onGalleryClick}
+                  onClick={onFreePreviewClick}
                 >
                   Preview
                 </button>
