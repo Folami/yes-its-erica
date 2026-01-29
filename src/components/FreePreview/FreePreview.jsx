@@ -3,7 +3,7 @@ import Navbar from '../Navbar/Navbar'
 import Footer from '../Footer/Footer'
 import './FreePreview.css'
 
-function FreePreview({ onNavigate }) {
+function FreePreview({ onNavigate, onBack }) {
   return (
     <>
       <Navbar onNavigate={onNavigate} />

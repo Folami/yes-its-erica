@@ -10,6 +10,7 @@ import PhotoGallery from './components/PhotoGallery/PhotoGallery'
 import VideoCollection from './components/VideoCollection/VideoCollection'
 import Merchandise from './components/Merchandise/Merchandise'
 import BookingModal from './components/BookingModal/BookingModal'
+import BackToTop from './components/BackToTop/BackToTop'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -70,6 +71,8 @@ function App() {
         />
         
         {renderContent()}
+
+        <BackToTop />
 
       </div>
     </GoogleOAuthProvider>
