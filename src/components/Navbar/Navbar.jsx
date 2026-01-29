@@ -17,6 +17,7 @@ function Navbar({ onLoginClick, onNavigate }) {
         </div>
 
         <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+          <a onClick={() => handleNavClick('home')}>Home</a>
           <a onClick={() => handleNavClick('photo-gallery')}>Photo Gallery</a>
           <a onClick={() => handleNavClick('video-collection')}>Video Collection</a>
           <a onClick={() => handleNavClick('merchandise')}>Merchandise</a>
